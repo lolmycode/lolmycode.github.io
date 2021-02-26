@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      	<script src="threejs.js"></script>
     <style>
       body {
       /* position: absolute; */
@@ -17,6 +20,7 @@
 
       #styleone {
         position: absolute;
+        display: none;
         color: red;
         width: 600px;
         left: 80px;
@@ -25,7 +29,6 @@
         font-size: 33px;
         text-align: left;
         text-shadow: 1px 2px 5px blue;
-
       }
 
       #picthree {
@@ -36,8 +39,17 @@
           border-radius: 100px 100px 100px 100px;
         }
 
+        #picdrag {
+            position: fixed;
+            top: 100px;
+            right: 530px;
+            width: 300px;
+            border-radius: 100px 100px 100px 100px;
+          }
+
       #pictwo {
         position: fixed;
+        cursor:progress;
         top: 90px;
         right: 200px;
         width: 300px;
@@ -52,6 +64,8 @@
     oy vey.
     <img id=picthree src="trial-pic.png">
     <img id=pictwo src="trial-pic.png">
+    <img id=picdrag src="magic-ball.png">
+
     <div id=styleone>This product saved our Yorkies remaining 7 teeth. She was 8 years old when we started using it every single day. She had already lost all of her teeth but those 7. I had used other products prior to finding this one, I'm so thankful to have found it. Our Yorkie lived until she was 17 without loosing one more tooth.</div>
 
     <a href="index.html"> revert my cookie </a>
