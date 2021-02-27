@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Humanity Check!</title>
-    <!-- <link rel="shortcut icon" href="favicon-tbd.png"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
       	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
       	<script src="threejs.js"></script>
@@ -32,6 +31,14 @@
         left: 60px;
       }
 
+      #animatedcap {
+        position: fixed;
+        display: none;
+        width: 630px;
+        top: 220px;
+        left: 10px;
+      }
+
       #typeinbox {
         position: fixed;
         width: 400px;
@@ -57,17 +64,6 @@
         color: DimGray;
       }
 
-      #secondheadline {
-        position: fixed;
-        width: 500px;
-        top: 100px;
-        right: 330px;
-        /* left: 60px; */
-        font-family: Tahoma, sans-serif;
-        font-size: 40px;
-        color: DimGray;
-      }
-
       #bodycopy {
              position:fixed;
              width:600px;
@@ -78,18 +74,20 @@
              font-size: 18px;
                }
 
-    #secondbodycopy {
-             position:fixed;
-             width:600px;
-             top: 155px;
-             right: 230px;
+    #bluecopy {
+             /* position:fixed; */
+             cursor: pointer;
+             width:500px;
+             /* top: 150px; */
+             /* left: 60px; */
              font-family: 'Trebuchet MS', sans-serif;
-             color: Gray;
+             color: RoyalBlue;
              font-size: 18px;
                }
 
-    #bluecopy {
+    #goaway {
              /* position:fixed; */
+             /* cursor: pointer; */
              width:500px;
              /* top: 150px; */
              /* left: 60px; */
@@ -100,6 +98,7 @@
 
       #microtext {
         position: fixed;
+        cursor: help;
         width: 300px;
         top: 520px;
         left: 60px;
@@ -108,80 +107,20 @@
         color: RoyalBlue;
       }
 
-      #picthree {
-          position: fixed;
-          top: 600px;
-          right: 320px;
-          width: 100px;
-          border-radius: 100px 100px 100px 100px;
-        }
-
-        /* #picdrag {
-            position: fixed;
-            top: 100px;
-            right: 530px;
-            width: 300px;
-            border-radius: 100px 100px 100px 100px;
-          } */
-
-      #gridone {
-            position: fixed;
-            top: 220px;
-            right: 530px;
-            width: 300px;
-            border-radius: 100px 100px 18px 18px;
-          }
-
-     #gridtwo {
-            position: fixed;
-            top: 220px;
-            /* right: 530px; */
-            right: 200px;
-            width: 300px;
-            border-radius: 100px 100px 18px 18px;
-          }
-
-    #gridthree {
-            position: fixed;
-            top: 540px;
-            /* right: 530px; */
-            right: 530px;
-            width: 300px;
-            border-radius: 18px 18px 100px 100px;
-          }
-
-      #pictwo {
-        position: fixed;
-        cursor:progress;
-        top: 90px;
-        right: 200px;
-        width: 300px;
-        border: 6px solid black;
-        border-radius: 100px 100px 12px 12px;
-      }
-
-
       </style>
   </head>
+
   <body>
-    oy vey.
-    <a href="index.html"> revert my cookie </a>
-    <img id=picthree src="trial-pic.png">
-    <!-- <img id=pictwo src="trial-pic.png"> -->
+    <!-- <a href="index.html"> revert my cookie </a> -->
 
-    <img id=gridone src="magic-ball.png">
-    <img id=gridtwo src="magic-ball.png">
-    <img id=gridthree src="magic-ball.png">
-    <!-- <img id=picdrag src="magic-ball.png"> -->
     <div id=headline>Humanity Check</div>
+    <!-- <div id=bodycopy>Please enter the words below. Can't read the text? <span id=bluecopy><a href="laststraw.html">Try another</a></span>.</div> -->
     <div id=bodycopy>Please enter the words below. Can't read the text? <span id=bluecopy>Try another</span>.</div>
-
-    <div id=secondheadline>Humanity Check</div>
-    <div id=secondbodycopy>Select all the squares with X. If there are none, click Skip. </div>
 
     <img id=captcha src="captcha.png">
     <div id=typeinbox>Type the text here.</div>
     <div id=microtext>Why tho?</div>
-    <div id=styleone>This product saved our Yorkies remaining 7 teeth. She was 8 years old when we started using it every single day.</div>
+    <div id=styleone>This product saved our Yorkies remaining 7 teeth. <span id=goaway><a href="laststraw.html">She was 8 years old</a></span> when we started using it every single day.</div>
+    <img id=animatedcap src="captcha-animated.gif">
   </body>
   </html>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // alert("You regret that thing from yesterday, don't you?");
+  alert("You regret that thing from yesterday, don't you?");
 
   $("#picdrag").draggable();
 
@@ -10,6 +10,10 @@ $(document).ready(function() {
 
   $("#microtext").hover(function(){
     $("#styleone").show();
+  });
+
+  $("#bluecopy").click(function(){
+    $("#animatedcap").show();
   });
 
   $("#typeinbox").click(function(){
