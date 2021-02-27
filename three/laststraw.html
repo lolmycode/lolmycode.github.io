@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      	<script src="threejs.js"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+      position: absolute;
+      background-color: FloralWhite;
+      }
+
+      #headline {
+        position: fixed;
+        width: 500px;
+        top: 100px;
+        left: 60px;
+        font-family: Tahoma, sans-serif;
+        font-size: 40px;
+        color: DimGray;
+      }
+
+      #secondheadline {
+        position: fixed;
+        width: 900px;
+        top: 100px;
+        right: 330px;
+        /* left: 60px; */
+        font-family: Tahoma, sans-serif;
+        font-size: 40px;
+        color: DimGray;
+      }
+
+      #bodycopy {
+             position:fixed;
+             width:600px;
+             top: 155px;
+             left: 60px;
+             font-family: 'Trebuchet MS', sans-serif;
+             color: Gray;
+             font-size: 18px;
+               }
+
+      #bluecopy {
+             /* position:fixed; */
+             width:500px;
+             /* top: 150px; */
+             /* left: 60px; */
+             font-family: 'Trebuchet MS', sans-serif;
+             color: RoyalBlue;
+             font-size: 18px;
+               }
+
+        /* #picdrag {
+            position: fixed;
+            top: 100px;
+            right: 530px;
+            width: 300px;
+            border-radius: 100px 100px 100px 100px;
+          } */
+
+    #squareone {
+      position: fixed;
+      top: 220px;
+      left: 60px;
+      width: 300px;
+      border-radius: 100px 100px 18px 18px;
+    }
+
+    #squaretwo {
+      position: fixed;
+      top: 220px;
+      left: 380px;
+      width: 300px;
+      border-radius: 100px 100px 18px 18px;
+    }
+
+    #squarethree {
+       position: fixed;
+       top: 540px;
+       left: 60px;
+       width: 300px;
+       border-radius: 18px 18px 100px 100px;
+      }
+
+    #squarefour {
+      position: fixed;
+      top: 540px;
+      left: 380px;
+      width: 300px;
+      border-radius: 18px 18px 100px 100px;
+    }
+
+    #lasttop {
+      position: fixed;
+      top: 220px;
+      left: 700px;
+      width: 300px;
+      border-radius: 100px 100px 18px 18px;
+    }
+
+    #lastbottom {
+      position: fixed;
+      top: 540px;
+      left: 700px;
+      width: 300px;
+      border-radius: 18px 18px 100px 100px;
+    }
+
+      #pictwo {
+        position: fixed;
+        cursor:progress;
+        top: 90px;
+        right: 200px;
+        width: 300px;
+        border: 6px solid black;
+        border-radius: 100px 100px 12px 12px;
+      }
+
+      #funfont {
+        position: absolute;
+        /* display: none; */
+        color: red;
+        /* width: 600px; */
+        left: 55px;
+        letter-spacing: -3px;
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-size: 50px;
+        text-align: left;
+        text-shadow: 1px 2px 5px blue;
+      }
+
+      #picthree {
+          position: fixed;
+          top: 600px;
+          right: 320px;
+          width: 100px;
+          border-radius: 100px 100px 100px 100px;
+        }
+
+      #button {
+        position: fixed;
+        top: 60px;
+        right: 60px;
+        border: 1px solid black;
+        padding: 10px;
+        box-shadow: 5px 10px 18px red;
+        font-family: 'Courier New', monospace;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      </style>
+  </head>
+  <body>
+    <img id=picthree src="trial-pic.png">
+
+    <img id=squareone src="magic-ball.png">
+    <img id=squaretwo src="magic-ball.png">
+    <img id=squarethree src="magic-ball.png">
+    <img id=squarefour src="trial-pic.png">
+
+    <img id=lasttop src="magic-ball.png">
+    <img id=lastbottom src="magic-ball.png">
+
+    <!-- <img id=picdrag src="magic-ball.png"> -->
+    <div id=headline>Humanity Check</div>
+    <div id=bodycopy>Select all the squares with X. Which one one taste the sweetest? If there are none, click Skip. <span id=bluecopy>Try another</span>.</div>
+    <div id=funfont>❦logo</div>
+
+    <a href="index.html">
+    <div id=button>Break Free</div>
+    </a>
+
+
+  </body>
+  </html>
