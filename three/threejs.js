@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  alert("You regret that thing from yesterday, don't you?");
+  alert("hi.");
 
   $("#picdrag").draggable();
 
