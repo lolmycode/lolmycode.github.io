@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Magnetic Poetry</title>
+
+    <link rel="shortcut icon" href="favicon-tbd.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      	<script src="threejs.js"></script>
+
+    <style>
+      body {
+      position: absolute;
+      background-color: #F6F6F6;
+      }
+
+      #headline {
+        position: fixed;
+        width: 500px;
+        top: 100px;
+        left: 60px;
+        font-family: Tahoma, sans-serif;
+        font-size: 40px;
+        color: #303030;
+      }
+
+      #bodycopy {
+             position:fixed;
+             width:600px;
+             top: 155px;
+             left: 60px;
+             font-family: 'Trebuchet MS', sans-serif;
+             color: Gray;
+             font-size: 18px;
+               }
+
+      #picdrag {
+            position: fixed;
+            cursor: move;
+            top: 230px;
+            left: 60px;
+            width: 200px;
+            /* right: 530px; */
+            /* width: 200px; */
+          }
+
+    #squaretwo {
+      position: fixed;
+      cursor: move;
+      top: 230px;
+      left: 290px;
+      width: 200px;
+    }
+
+      #pictwo {
+        position: fixed;
+        cursor:progress;
+        top: 90px;
+        right: 200px;
+        width: 300px;
+        border: 6px solid black;
+        border-radius: 100px 100px 12px 12px;
+      }
+
+      #button {
+        position: fixed;
+        top: 60px;
+        right: 60px;
+        border: 1px solid black;
+        padding: 10px;
+        box-shadow: 5px 10px 18px red;
+        font-family: 'Courier New', monospace;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      </style>
+  </head>
+
+  <body>
+    <div id=headline>write a poem</div>
+    <div id=bodycopy>drag keywords to compose your poem.</div>
+
+    <img id=picdrag src="highly-rec.png">
+    <img id=squaretwo src="dish-safe.png">
+
+    <a href="index.html">
+    <div id=button>Back to Home</div>
+    </a>
+
+  </body>
+  </html>
