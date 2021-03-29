@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <title>grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Calistoga -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+  <!-- Benne -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+<style>
+
+div.gallery {
+  border: 1px solid #D10D00;
+  /* margin: auto; */
+  /* margin: 5px; */
+  /* float: left;
+  width: 180px; */
+}
+
+div.gallery:hover {
+  border: 3px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+  .center {
+    margin: auto;
+    width: 30%;
+    /* border: 3px solid #73AD21; */
+    padding: 10px;
+    /* text-align: center; */
+    /* background-color: yellow; */
+    /* background-image: linear-gradient(red, yellow, green); */
+  }
+
+  .p1 {
+    font-family: 'Calistoga', cursive;
+    color: white;
+    /* font-style: italic; */
+    text-shadow: 1px 2px 5px #693FAE;
+    letter-spacing: -2px;
+    /* font-weight: bold; */
+    font-size: 45px;
+    /* text-align: left; */
+    line-height: 1.1;
+
+  }
+
+  .p2 {
+    font-family: 'Benne', serif;
+    color: white;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  </style>
+  </head>
+  <body>
+
+ <h2>placeholder</h2>
+ <!-- <p>To horizontally center a block element (like div), use margin: auto;</p> -->
+
+ <div class="responsive">
+   <div class="gallery">
+    <img src="cup.png" alt="Cup Drink" width="600" height="400">
+     <!-- <div class="desc">Add a description of the image here</div> -->
+   </div>
+ </div>
+
+ <div class="responsive">
+   <div class="gallery">
+     <a target="_blank" href="https://www.amazon.com/amazonprime?_encoding=UTF8&ref_=nav_cs_primelink_nonmember_8493a4e26fe645e39b392d27f8327e9c">
+       <img src="castle.png" alt="Forest" width="600" height="400">
+     </a>
+   </div>
+ </div>
+
+ <div class="responsive">
+   <div class="gallery">
+    <img src="cupdemo.gif" width="600" height="400">
+     <!-- <div class="desc">Add a description of the image here</div> -->
+   </div>
+ </div>
+
+ <div class="clearfix"></div>
+
+<div style="padding:6px;">
+  <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+</div>
+
+
+ <!-- <div class="center">
+   <p class="p1">A TOOL FOR MASS CHAOS</p>
+   <p class="p2">a few books
+   <br>
+   the remote
+   <br>
+   the tv and game consoles
+   <br>
+    my lotion
+   <br>
+   all the faces on all the posters
+    <br>
+    some random presents
+    <br>
+   the fridge
+   <br>  my husbands coffee maker and creamer
+   <br>  the tables
+   <br>  some of the chairs
+   <br>  a fire extinguisher
+   <br>  our condiments and appliances
+   <br>  banana and the condiments at Ruby Tuesday's. </p>
+ </div> -->
+
+
+</body>
+</html>
