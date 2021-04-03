@@ -4,6 +4,8 @@ $(document).ready(function() {
 
   $("#squaretwo").draggable();
 
+  $("#newbutton").draggable();
+
   // $("#picthree").click(function(){
   //   $("#styleone").show();
   // });
