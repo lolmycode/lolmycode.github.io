@@ -12,6 +12,9 @@
 <!-- IM Fell -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap" rel="stylesheet">
+
+<script src="newthird.js"></script>
+
  <style>
 
  a:link {
@@ -89,6 +92,79 @@
     /* text-shadow: 1px 2px 5px #693FAE; */
   }
 
+  /* #highlight {
+    background-size: 200% auto;
+    background-image: linear-gradient(to right,#fff 50%,#ff0 50%);
+    background-position: 0% 0; */
+
+
+
+    /* transition: background-position 0.8s ease-out; */
+
+    /* animation-name: example;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes example {
+      from {background-position: 0% 0;}
+      to {background-position: -100% 0;}
+  } */
+
+
+  .highlight {
+  position: relative;
+  background-origin: 0;
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.8s ease-out;
+  padding: 4px 0px;
+}
+
+.highlight.shown {
+  position: relative;
+  background-origin: 0;
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  background-position: -100% 100%;
+  transition: background-position 0.8s ease-out;
+}
+
+.highlight-link {
+  position: relative;
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-main) 50%);
+  background-origin: 0;
+  background-size: 200% 30%;
+  background-repeat: repeat-x;
+  background-position: 0 80%;
+  transition: background-position 0.8s ease-out;
+  transition-delay: 0.5s;
+  padding: 4px 0px;
+}
+
+.highlight-link.shown {
+  position: relative;
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-main) 50%);
+  background-origin: 0;
+  background-size: 200% 30%;
+  background-repeat: repeat-x;
+  background-position: -100% 80%;
+  transition: background-position 0.8s ease-out;
+  transition-delay: 0.5s;
+}
+
+.highlight-cook-fresh {
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-cook-fresh) 50%);
+}
+
+.highlight-cook-fresh.shown {
+  background-image: linear-gradient(to right, transparent 50%, var(--highlight-cook-fresh) 50%);
+}
+
+
   </style>
   </head>
   <body>
@@ -99,7 +175,6 @@
    <p class="p2">
    <a href="https://www.amazon.com/gp/customer-reviews/R2DJP2QN3LG82P/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B08BG8JBCR">MASSIVE hat</a>
    <br>
-   <a href="https://www.amazon.com/gp/customer-reviews/R2FHNCJDAHWNKU/ref=cm_cr_getr_d_rvw_ttl?ie=UTF8&ASIN=B08BG8JBCR">Crazy Stupid Small</a>
    <br>
    <br>
     Far from the best
@@ -127,7 +202,7 @@
     Not sturdy
     <br>
     <br>
-    Very Very Very CHEAPLY Made Product
+
     <br>
     Very good item
     <br>
@@ -157,7 +232,10 @@
      Absolutely waterproof<br>
      NOT WATERPROOF AT ALL<br>
      Not at all waterproof<br>
-     NOT WATERPROOF!!!<br>
+     Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.
+       <span class="highlight highlight-cook-fresh.shown"> 
+         Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</span>
+     Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.NOT WATERPROOF!!!<br>
      TRULY WATERPROOF!!<br>
      It really is 100% waterproof ~ works perfectly.<br>
 
