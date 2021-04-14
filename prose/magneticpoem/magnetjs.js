@@ -23,7 +23,6 @@ $(document).ready(function() {
   $("#r3w2").draggable();
   $("#r3w3").draggable();
   $("#r3w4").draggable();
-  $("#r3w4").draggable();
   $("#r3w5").draggable();
   $("#r3w6").draggable();
   $("#r3w7").draggable();
