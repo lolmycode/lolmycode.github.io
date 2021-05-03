@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+  <head>
+    <title>magnetic poem</title>
+    <link rel="shortcut icon" href="favstar.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+        <script src="magdrag.js"></script>
+
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+
+    <style>
+
+      /* body {
+      position: absolute;
+      background-color: white;
+      } */
+
+      body {
+      position: absolute;
+      background-color: white;
+      color: black;
+      /* font-family: 'Benne', serif; */
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      /* background: #D7E7EB; */
+      /* border-bottom: 1.8px solid #A9A9A9; */
+      }
+
+      #headline {
+        position: fixed;
+        text-align: left;
+        width: 700px;
+        top: 45px;
+        left: 60px;
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 49px;
+        color: #303030;
+      }
+
+  #bodycopy {
+             position:fixed;
+             text-align: left;
+             width:660px;
+             top: 106px;
+             left: 60px;
+            font-family: 'Anonymous Pro', monospace;
+             color: black;
+             font-size: 23px;
+               }
+
+  #fineprint {
+             position:fixed;
+             text-align: left;
+             width:660px;
+             top: 150px;
+             left: 60px;
+              font-family: 'Anonymous Pro', monospace;
+             font-style: italic;
+             line-height: 1.5;
+             color: #585858;
+             font-size: 14px;
+               }
+
+    #button {
+      position: fixed;
+      top: 60px;
+      right: 60px;
+      border: 1px solid black;
+      padding: 11px;
+      box-shadow: 5px 10px 18px red;
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #newbutton {
+      /* position: relative; */
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      right: 60px;
+      padding: 10px;
+      color: black;
+      width: 120px;
+      /* width: 1px;
+      height: 20px;
+      padding-top: 2px;
+      padding-bottom: 1px;
+      padding-right: 5px;
+      padding-left: 5px;
+      margin: 2px; */
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      text-align: center;
+      background: #D7E7EB;
+      border-bottom: 1.8px solid #A9A9A9;
+      /* top: 60px;
+      right: 60px;
+      padding: 10px;
+      box-shadow: 5px 10px 18px red;
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      font-weight: bold; */
+    }
+
+    #wo1 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 60px;
+      /* height: 75px; */
+      padding: 10px;
+      color: black;
+      width: 120px;
+      font-family: "Times New Roman", Times, serif;
+      /* font-family: 'Noto Sans JP', sans-serif; */
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo2 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 210px;
+      /* height: 75px; */
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      /* font-family: 'Noto Sans JP', sans-serif; */
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo3 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 263px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo4 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 318px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      width: 90px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo5 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 438px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo6 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 479px;
+      padding: 10px;
+      width: 150px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo7 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 659px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo8 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 692px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo9 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 697px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo10 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 749px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #wo11 {
+      position: fixed;
+      cursor: move;
+      top: 430px;
+      left: 794px;
+      padding: 10px;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 19px;
+      text-align: center;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w1 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 60px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w2 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 158px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w3 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 212px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w4 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 321px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w5 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 379px;
+      padding: 10px;
+        width: 118px;
+        background: #f1f9f1;
+        border: 1.4px solid black;
+    }
+
+    #r2w6 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 526px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w7 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 578px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r2w8 {
+      position: fixed;
+      cursor: move;
+      top: 490px;
+      left: 730px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w1 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 60px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w2 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 138px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w3 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 272px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w3 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 274px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w4 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 337px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w5 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 382px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w6 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 469px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w7 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 527px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w8 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 595px;
+      padding: 10px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+    #r3w9 {
+      position: fixed;
+      cursor: move;
+      top: 550px;
+      left: 631px;
+      padding: 10px;
+      width: 130px;
+      background: #f1f9f1;
+      border: 1.4px solid black;
+    }
+
+      </style>
+  </head>
+
+  <body>
+
+    <div id=headline>write a poem</div>
+    <div id=bodycopy>drag keywords to compose your poem.</div>
+    <br>
+    <div id=fineprint>This poem is inspired by Amazon's "Read Reviews that Mention"  keyword cloud, which lets users filter reviews by frequently used words/phrases. </div>
+
+    <!-- <div id=button>Back to Home</div> -->
+
+    <div id=wo1>disappointing</div>
+    <div id=wo2>my</div>
+    <div id=wo3>use</div>
+    <div id=wo4>rainy day</div>
+    <div id=wo5>is</div>
+    <div id=wo6>highly recommend</div>
+    <div id=wo7>a</div>
+    <div id=wo9>we</div>
+    <div id=wo10>to</div>
+    <div id=wo11>available</div>
+
+    <div id=r2w1>fell apart</div>
+    <div id=r2w2>the</div>
+    <div id=r2w3>make sure</div>
+    <div id=r2w4>and</div>
+    <div id=r2w5>absolutley love</div>
+    <div id=r2w6>for</div>
+    <div id=r2w7>dishwasher safe</div>
+    <div id=r2w8>whole family</div>
+
+    <div id=r3w1>flimsy</div>
+    <div id=r3w2>peace of mind</div>
+    <div id=r3w3>love</div>
+    <div id=r3w4>in</div>
+    <div id=r3w5>another</div>
+    <div id=r3w6>you</div>
+    <div id=r3w7>want</div>
+    <div id=r3w8>i</div>
+    <div id=r3w9>silicone funnel</div>
+
+
+
+  </body>
+  </html>
