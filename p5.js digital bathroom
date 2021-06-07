@@ -1,0 +1,264 @@
+var serial; //Var to hold an instance of S.Lib
+let dataA; //button
+let dataB; //water
+let dataC; //pot 
+let dataD; //in
+let dataDD; //cm 
+let flushSound;
+let flushSoundallowedtoplay = true;
+let sinkSound;
+let sinkSoundallowedtoplay = true;
+let endY = 0;
+let endYY = 0;
+let endXX = 0;
+let faucetAllowedtoRun = true;
+let soapbubAllowedtoRun = true;
+
+function preload() {
+  flushSound = loadSound('395832__primisteka__wc.mp3');
+  sinkSound = loadSound('344667__daymonjlong__sink-water.mp3');
+}
+
+function setup() {
+  createCanvas(600, 380);
+  serial = new p5.SerialPort();
+  serial.on('data', serialEvent);
+  serial.open('/dev/tty.usbmodem14101');
+}
+
+function draw() {
+  rectMode(CENTER);
+  background(245, 239, 228);
+  smooth();
+
+  //TILE FLOOR//
+  push();
+  stroke(255);
+  strokeWeight(2);
+  fill(245, 239, 228);
+  for (let x = 0; x <= width; x += width / 16) {
+    for (let y = 0; y <= height; y += height / 16) {
+      // x = the left-hand side of our rectangle
+      rect(x, y, width / 16, height / 16);
+    }
+  }
+  pop();
+
+  // IF WATER SENSOR REACHES 335, FLUSH!!!
+  if (dataB > 335) {
+    if (flushSound.isPlaying() == false && flushSoundallowedtoplay == true) {
+      flushSound.setVolume(1);
+      flushSound.play();
+      flushSound.rate(1);
+      flushSoundallowedtoplay = false;
+    }
+  } else { //i.e. if rip <= -50
+    flushSoundallowedtoplay = true;
+  }
+
+  // SINK: IF ULTRASONIC DETECTS HANDS, RUN SINK SOUND // 
+  beginShape(); //Base/Foundation 
+  vertex(276, 170);
+  vertex(324, 170);
+  vertex(314, 245);
+  vertex(288, 245);
+  endShape(CLOSE);
+  ellipse(300, 138, 120, 90); //Basin/Bowl
+  rect(300, 90, 34, 11, 4); //Faucet Base
+  ellipse(300, 135, 105, 75); //Inside of Basin
+
+  // TO RUN FAUCET, WAVE HAND CLOSE TO SONICSENSOR //
+  push();
+  if (dataD <= 2 && faucetAllowedtoRun == true) {
+    for (let y = 99; y < endY; y += 10) {
+      stroke(56, 168, 224);
+      strokeWeight(2);
+      line(289, y, 310, y);
+    }
+    endY += 10; // Increment endY
+    // reset endY back to 0 if it gets to the end
+    if (endY > 165) {
+      endY = 0;
+    }
+  }
+  pop();
+
+  beginShape(); //Faucet Head
+  vertex(291, 88);
+  vertex(311, 88);
+  vertex(306, 119);
+  vertex(297, 119);
+  endShape(CLOSE);
+  beginShape(); //FAUCET TIP 
+  vertex(297, 119);
+  vertex(306, 119);
+  vertex(303, 121);
+  vertex(300, 121);
+  endShape(CLOSE);
+  ellipse(301, 140, 14, 13); //Drain 
+  ellipse(301, 140, 9, 9); // Drain (inner circle)
+
+  //TOILET
+  rect(90, 182, 110, 90, 3); //Toilet Base
+  ellipse(90, 245, 111, 160); //Toilet Bowl Lid (Big Circle)
+  ellipse(90, 245, 74, 126); //Toilet Bowl (inner)
+  ellipse(128, 85, 20, 20);
+  rect(108, 84, 42, 11); //1st Connecting Pipe
+  rect(117, 84, 16, 14, 1); //2nd Connecting Pipe
+  // rect(122,84,11,12,1); //2nd Connecting Pipe
+  push();
+  //fill(222, 217, 209);
+  // stroke(219, 217, 211);
+  ellipse(90, 220, 26, 36); //Bigger Shadow
+  pop();
+  push();
+  // fill(242, 240, 235);
+  // noStroke();
+  ellipse(90, 217, 22, 29); //Inner Shadow 
+  pop();
+  ellipse(90, 59, 30, 30); //Pipe Circle to Wall
+  ellipse(90, 150, 28, 10); //Stem Bottom (circle)
+  rect(90, 102, 16, 96, 2); //Stem 
+  //rect(72, 75, 32, 6, 1); //Flusher Handle
+  rect(76, 94, 10, 10); //Flush Button
+  rect(90, 86, 28, 43, 3); //Stem Block Thing
+  
+  //SOAP// 
+  rect(364, 76, 32, 40, 4);
+  ellipse(364, 95, 10, 10);
+
+  // TO GET TOWEL, CRANK POTENTIOMETER //
+  push();
+  if (dataC > 725) {
+    for (let y = 140; y < endXX; y += 5) {
+      stroke('black');
+      strokeWeight(1);
+      rect(520, y, 59, 69, 10);
+    }
+    endXX += 3; // Increment endY
+    // reset endY back to 0 if it gets to the end
+    if (endXX > 180) {
+      endXX = 0;
+    }
+  }
+  pop();
+  
+  //DRYER//
+  rect(520, 118, 59, 69, 10); //Towel
+  rect(520, 97, 86, 97, 10); //Main Body (Biggest)
+  rect(520, 97, 76, 87, 9); //Inside
+  
+  // TO GET SOAP BUBBLES, PUSH BUTTON //
+  push();
+  if (dataA > 0 && soapbubAllowedtoRun == true) {
+    for (let y = 100; y < endYY; y += 5) {
+      stroke(250, 202, 224);
+      strokeWeight(2);
+      ellipse(364, y, 10, 10);
+    }
+    endYY += 10; // Increment endY
+    // reset endY back to 0 if it gets to the end
+    if (endYY > 155) {
+      endYY = 0;
+    }
+  }
+  pop();
+}
+
+function serialEvent() {
+  let inString = serial.readLine();
+  if (inString.length > 0) { //String really there?
+ //If so, split string into an array ('sensors') of substrings on commas:
+    let sensors = split(inString, ',');
+    if (sensors.length > 1) {
+      dataA = int(sensors[0]); //button
+      dataB = int(sensors[1]); //water
+      dataC = int(sensors[2]); //pot 
+      dataD = int(sensors[3]); //in
+      dataDD = int(sensors[4]); //cm 
+      console.log("Sens 1: " + sensors[0]); //button
+      console.log("Sens 2: " + sensors[1]); //water 
+      console.log("Sens 3: " + sensors[2]); //pot 
+      console.log("Sens 4: " + sensors[3]); //in
+      console.log("Sens 5: " + sensors[4]); //cm 
+    }
+  }
+}
+THE CODE: ARDUINO
+
+int buttonPin = 2;
+int buttonVal;
+int waterPin = A0;
+int waterVal;
+int potPin = A7;
+int potVal;
+int sonicEchoPin = A1;
+int sonicTrigPin = A2;
+int sonicEchoVal;
+int sonicTrigVal;
+long duration;
+int distance;
+
+void setup() {
+Serial.begin(9600);
+pinMode(buttonPin, INPUT);
+pinMode(waterPin, INPUT);
+pinMode(potPin, INPUT);
+}
+
+void loop() {
+  buttonVal  = digitalRead(buttonPin);
+  waterVal  = analogRead(waterPin);
+  potVal = analogRead(potPin); 
+  long duration, inches, cm;
+  //Sensor triggered by a HIGH pulse of 10+ microseconds
+  //Give short LOW pulse beforehand to ensure a clean HIGH pulse:
+  pinMode(sonicTrigPin, OUTPUT);
+  digitalWrite(sonicTrigPin, LOW);  //Clears the trigPin
+  delayMicroseconds(2);
+  digitalWrite(sonicTrigPin, HIGH);  //Sets the trigPin HIGH for 10ms 
+  delayMicroseconds(10);
+  digitalWrite(sonicTrigPin, LOW);
+
+  // Read signal from sensor: a HIGH pulse whose
+  // duration is the time (in ms) from the sending
+  // of the ping to the reception of its echo off an object
+  pinMode(sonicEchoPin, INPUT);
+  duration = pulseIn(sonicEchoPin, HIGH);// Reads echoPin, returns the sound wave travel time in ms
+  //////////distance= duration*0.034/2;  //Calculate the distance
+ //convert the time into a distance
+   inches = microsecondsToInches(duration);
+   cm = microsecondsToCentimeters(duration);
+// Prints the distance on the Serial Monitor
+//Serial.print("Distance: ");
+//Serial.println(distance);
+//  sonicEchoVal = analogRead(sonicEchoPin);
+//  sonicTrigVal = analogRead(sonicTrigPin);
+
+Serial.print(buttonVal);
+Serial.print(", ");
+Serial.print(waterVal);
+Serial.print(", ");
+Serial.print(potVal);
+Serial.print(",  ");
+Serial.print(inches);
+Serial.print("in,  ");
+Serial.print(cm);
+Serial.print("cm");
+Serial.println();
+delay(100);
+}
+
+long microsecondsToInches(long microseconds) {
+  // According to Parallax's datasheet for the PING))), there are
+  // 73.746 microseconds per inch (i.e. sound travels at 1130 feet per second). This gives the distance travelled by the ping, outbound
+  // and return, so we divide by 2 to get the distance of the obstacle. // See: http://www.parallax.com/dl/docs/prod/acc/28015-PING-v1.3.pdf
+  return microseconds / 74 / 2;
+}
+
+long microsecondsToCentimeters(long microseconds) {
+  // The speed of sound is 340 m/s or 29 microseconds per centimeter.
+  // The ping travels out and back, so to find the distance of the
+  // object we take half of the distance traveled 
+  return microseconds / 29 / 2;
+}
